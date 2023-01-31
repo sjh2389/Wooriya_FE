@@ -1,0 +1,13 @@
+echo "# test" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/sjh2389/MJGJSG_FE.git
+git push -u origin main
+
+git add .
+git commit -m "FE 12/14 commit after Docker"
+git branch -M main
+git remote add origin https://github.com/sjh2389/MJGJSG_FE.git
+git push -u origin main

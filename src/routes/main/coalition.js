@@ -5,7 +5,7 @@
 */
 
 import { useEffect, useState } from "react"
-import axios from "axios"
+// import axios from "axios"
 import Board from "../../component/board"
 import './css/coalition.css'
 import BoardPostForm from "../../component/boardPostForm"
@@ -24,7 +24,7 @@ function Coalition() {
 
     // 더미데이터 입력
     useEffect(() => {
-        setIndexs(["글번호", "제휴규모", "제공기업", "제목"])
+        setIndexs(["글번호", "title", "companyName", "coType", "coSize" ])
         setCoalitionPosts(DummyCoalition)
 
         // axios({
@@ -39,19 +39,21 @@ function Coalition() {
     // 사용자 작성 페이지 전송
     function onSubmit() {
 
-        axios({
-            url: 'https://jsonplaceholder.typicode.com/posts',
-            method: "POST",
-            data: JSON.stringify(inputBuffer),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8'
-            }
-        })
-            .then(res => {
-                console.log(res.data)
-                setCoalitionPosts(prev => [...prev, inputBuffer])
-            })
-            .catch(err => console.log(err))
+        console.log(inputBuffer)
+
+        // axios({
+        //     url: 'https://jsonplaceholder.typicode.com/posts',
+        //     method: "POST",
+        //     data: JSON.stringify(inputBuffer),
+        //     headers: {
+        //         'Content-type': 'application/json; charset=UTF-8'
+        //     }
+        // })
+        // .then(res => {
+        //     console.log(res.data)
+        //     setCoalitionPosts(prev => [...prev, inputBuffer])
+        //     })
+        //     .catch(err => console.log(err))
     }
 
     return (
@@ -63,7 +65,7 @@ function Coalition() {
             <h1 className="coalition_headline">
                 제휴제공 포스트 작성
             </h1>
-            {BoardPostForm(["글번호", "제휴규모", "제공기업", "제목"], setInputBuffer)}
+            {BoardPostForm([ "title", "companyName", "coType", "coSize" ], inputBuffer, setInputBuffer)}
             <div className="coalition_btnBox">
                 <Link to={"/"}>
                     <button className="coalition_btn">뒤로가기</button>

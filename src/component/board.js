@@ -6,10 +6,13 @@ data를 index로 정렬하여 보여준다
 */
 
 import Table from 'react-bootstrap/Table';
+import { useNavigate } from 'react-router-dom';
 import './css/board.css'
 
 // index와 data 모두 Array
 function Board (indexs, datas) {
+
+    const navigate = useNavigate()
 
     // head는 게시물 표 상단의 구분자들
     let head = indexs.map((index, i) => {
@@ -26,7 +29,7 @@ function Board (indexs, datas) {
             if (element === "글번호") {
                 row = [<td  key={"number"}>{JSON.stringify(i+1)}</td>]
             } else if (element !== "글번호") {
-                row.push(<td key={element}>{data[element]}</td>)
+                row.push(<td onClick={() => {navigate("/")}} key={element}>{data[element]}</td>)
             }
         });
 
