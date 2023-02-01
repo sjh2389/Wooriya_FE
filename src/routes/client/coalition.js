@@ -5,13 +5,13 @@
 */
 
 import { useEffect, useState } from "react"
-// import axios from "axios"
+import axios from "axios"
 import Board from "../../component/board"
 import './css/coalition.css'
 import BoardPostForm from "../../component/boardPostForm"
 import { Link } from "react-router-dom";
 
-import DummyCoalition from '../../dummy/dummyCoalition'
+// import DummyCoalition from '../../dummy/dummyCoalition'
 
 function Coalition() {
 
@@ -25,14 +25,13 @@ function Coalition() {
     // 더미데이터 입력
     useEffect(() => {
         setIndexs(["글번호", "title", "companyName", "coType", "coSize" ])
-        setCoalitionPosts(DummyCoalition)
 
-        // axios({
-        //     url: 'https://jsonplaceholder.typicode.com/posts?userId=1',
-        //     method: "GET"
-        // })
-        //     .then(res => setCoalitionPosts(res.data))
-        //     .catch(err => console.log(err))
+        axios({
+            url: 'http://localhost:8080/companypost',
+            method: "GET"
+        })
+            .then(res => setCoalitionPosts(res.data))
+            .catch(err => console.log(err))
         
     }, [])
 
@@ -42,12 +41,9 @@ function Coalition() {
         console.log(inputBuffer)
 
         // axios({
-        //     url: 'https://jsonplaceholder.typicode.com/posts',
+        //     url: 'http://localhost:8080/companypost/post',
         //     method: "POST",
-        //     data: JSON.stringify(inputBuffer),
-        //     headers: {
-        //         'Content-type': 'application/json; charset=UTF-8'
-        //     }
+        //     data: inputBuffer,
         // })
         // .then(res => {
         //     console.log(res.data)

@@ -7,7 +7,7 @@ git remote add origin https://github.com/sjh2389/MJGJSG_FE.git
 git push -u origin main
 
 git add .
-git commit -m "FE 12/14 commit after Docker"
+git commit -m "FE 01/31 commit"
 git branch -M main
 git remote add origin https://github.com/sjh2389/MJGJSG_FE.git
 git push -u origin main

@@ -13,9 +13,8 @@ function Home() {
     return (
         <div>
             <h1>웹 최초 접속 페이지</h1>
-            <button onClick={() => {navigate("/coalition")}}>제휴 검색</button>
-            <button onClick={() => {navigate("/coalition/post")}}>제휴 등록</button>
-            <button onClick={() => {navigate("/request")}}>맞춤 제휴 요청</button>
+            <button onClick={() => {navigate("/client/coalition")}}>제휴 검색</button>
+            <button onClick={() => {navigate("/provider/request")}}>맞춤 제휴 요청</button>
         </div>
     )
 }

@@ -5,13 +5,13 @@
 */
 
 import { useEffect, useState } from "react"
-// import axios from "axios"
+import axios from "axios"
 import Board from "../../component/board"
-import './css/coalition.css'
+import './css/request.css'
 import BoardPostForm from "../../component/boardPostForm"
 import { Link } from "react-router-dom";
 
-import DummyCoalition from '../../dummy/dummyCoalition'
+// import DummyCoalition from '../../dummy/dummyCoalition'
 
 function Request() {
 
@@ -25,14 +25,13 @@ function Request() {
     // 더미데이터 입력
     useEffect(() => {
         setIndexs(["글번호", "coSize", "coType", "title", "groupName"])
-        setCoalitionPosts(DummyCoalition)
 
-        // axios({
-        //     url: 'https://jsonplaceholder.typicode.com/posts?userId=1',
-        //     method: "GET"
-        // })
-        //     .then(res => setCoalitionPosts(res.data))
-        //     .catch(err => console.log(err))
+        axios({
+            url: 'http://localhost:8080/grouppost',
+            method: "GET"
+        })
+            .then(res => setCoalitionPosts(res.data))
+            .catch(err => console.log(err))
         
     }, [])
 
@@ -41,19 +40,19 @@ function Request() {
 
         console.log(inputBuffer)
 
-        // axios({
-        //     url: 'https://jsonplaceholder.typicode.com/posts',
-        //     method: "POST",
-        //     data: JSON.stringify(inputBuffer),
-        //     headers: {
-        //         'Content-type': 'application/json; charset=UTF-8'
-        //     }
-        // })
-        // .then(res => {
-        //     console.log(res.data)
-        //     setCoalitionPosts(prev => [...prev, inputBuffer])
-        //     })
-        //     .catch(err => console.log(err))
+        axios({
+            url: 'http://localhost:8080/grouppost/post',
+            method: "POST",
+            data: inputBuffer,
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8'
+            }
+        })
+        .then(res => {
+            console.log(res.data)
+            setCoalitionPosts(prev => [...prev, inputBuffer])
+            })
+            .catch(err => console.log(err))
     }
 
     return (

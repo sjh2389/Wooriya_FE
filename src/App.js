@@ -1,16 +1,20 @@
 /*
 작성자 서종현
-작성일 23.01.19.
+작성일 23.02.01.
 웹주소 경로 관리 코드단
 */
 
 // eslint-disable-next-line
 import { HashRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom"
-import Coalition from "./routes/main/coalition.js"
-import CoalitionPost from "./routes/main/coalitionPost.js"
-import Home from "./routes/main/home.js"
-import Request from "./routes/main/request.js"
 import 'bootstrap/dist/css/bootstrap.min.css'
+
+import Home from "./routes/main/home.js"
+
+import Request from "./routes/provider/request.js"
+
+import Coalition from "./routes/client/coalition.js"
+import CoalitionPost from "./routes/client/coalitionPost.js"
+
 
 function App() {
 
@@ -19,29 +23,27 @@ function App() {
       <div>
         <Routes>
           <Route index element={<Home />}></Route>
-          <Route path="request" element={<Request />}></Route>
-          <Route path="coalition" element={<Coalition />}></Route>
-          <Route path="coalition/post" element={<CoalitionPost />}></Route>
         </Routes>
       </div>
     )
   }
-
+  
   function Provider(){
     return(
       <div>
         <Routes>
-          <Route index element={<Home />}></Route>
+          <Route path="request" element={<Request />}></Route>
         </Routes>
       </div>
     )
   }
-
+  
   function Client(){
     return(
       <div>
         <Routes>
-          <Route index element={<Home />}></Route>
+          <Route path="coalition" element={<Coalition />}></Route>
+          <Route path="coalition/:postId" element={<CoalitionPost />}></Route>  
         </Routes>
       </div>
     )
