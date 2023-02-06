@@ -39,20 +39,21 @@ function Request() {
     function onSubmit() {
 
         console.log(inputBuffer)
+        setCoalitionPosts(prev => [...prev, inputBuffer])
 
-        axios({
-            url: 'http://localhost:8080/grouppost/post',
-            method: "POST",
-            data: inputBuffer,
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8'
-            }
-        })
-        .then(res => {
-            console.log(res.data)
-            setCoalitionPosts(prev => [...prev, inputBuffer])
-            })
-            .catch(err => console.log(err))
+        // axios({
+        //     url: 'http://localhost:8080/grouppost/post',
+        //     method: "POST",
+        //     data: inputBuffer,
+        //     headers: {
+        //         'Content-type': 'application/json; charset=UTF-8'
+        //     }
+        // })
+        // .then(res => {
+        //     console.log(res.data)
+        //     setCoalitionPosts(prev => [...prev, inputBuffer])
+        //     })
+        //     .catch(err => console.log(err))
     }
 
     return (

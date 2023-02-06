@@ -5,7 +5,7 @@
 */
 
 import { useEffect, useState } from "react"
-import axios from "axios"
+// import axios from "axios"
 import Board from "../../component/board"
 import './css/coalition.css'
 import BoardPostForm from "../../component/boardPostForm"
@@ -26,12 +26,12 @@ function Coalition() {
     useEffect(() => {
         setIndexs(["글번호", "title", "companyName", "coType", "coSize" ])
 
-        axios({
-            url: 'http://localhost:8080/companypost',
-            method: "GET"
-        })
-            .then(res => setCoalitionPosts(res.data))
-            .catch(err => console.log(err))
+        // axios({
+        //     url: 'http://localhost:8080/companypost',
+        //     method: "GET"
+        // })
+        //     .then(res => setCoalitionPosts(res.data))
+        //     .catch(err => console.log(err))
         
     }, [])
 
@@ -39,6 +39,7 @@ function Coalition() {
     function onSubmit() {
 
         console.log(inputBuffer)
+        setCoalitionPosts(prev => [...prev, inputBuffer])
 
         // axios({
         //     url: 'http://localhost:8080/companypost/post',
