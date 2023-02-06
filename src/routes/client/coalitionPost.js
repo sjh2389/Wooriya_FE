@@ -1,11 +1,12 @@
 /*
 작성자 서종현
-작성일 23.02.01.
+작성일 23.02.06.
 제휴제공 글 상세페이지
 */
 
 import { useEffect, useState } from "react"
 import axios from "axios"
+import dompurify from 'dompurify';
 import { useLocation } from "react-router-dom"
 import './css/coalitionPost.css'
 
@@ -28,10 +29,14 @@ function CoalitionPost() {
         
     }, [ postId ])
 
+    // XSS 공격 방지를 위한 DOMPurify
+    // 사용자가 입력한 값에서 잠제적 위협이되는 요소들을 걸러낸다
+    const sanitizer = dompurify.sanitize;
+
     return (
         <div className="coalitionPost_outterBox">
             <h1 className="coalitionPost_headline">제휴 제공글 상세페이지</h1>
-            {coalitionPost}
+            <div dangerouslySetInnerHTML={{__html: sanitizer(coalitionPost)}} />
         </div>
     )
 }

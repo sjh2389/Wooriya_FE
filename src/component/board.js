@@ -1,18 +1,26 @@
 /*
 작성자 서종현
-작성일 23.02.01.
+작성일 23.02.06.
 게시판, 게시글 컴포넌트
-data를 index로 정렬하여 보여준다
+부모요소에서 coalitionPost와 index를 받아
+정렬하여 보여준다
 */
 
 import Table from 'react-bootstrap/Table';
 import { useNavigate } from 'react-router-dom';
 import './css/board.css'
+import SearchBar from './searchBar';
+import { useEffect, useState } from 'react';
 
 // index와 data 모두 Array
-function Board (indexs, postInfoPackage) {
+function Board (indexs, coalitionPosts) {
 
     const navigate = useNavigate()
+    // 사용자에게 보여지는 게시글
+    const [ postInfoPackage, setPostInfoPackge ] = useState([])
+    useEffect(() => {
+        setPostInfoPackge(coalitionPosts)
+    },[coalitionPosts])
 
     // head는 게시물 표 상단의 구분자들
     let head = indexs.map((index, i) => {
@@ -55,17 +63,28 @@ function Board (indexs, postInfoPackage) {
         )
     })
 
+    // post 검색, 필터링 함수
+    function searchEngine(indexAndWord) {
+        const { selectedIndex, keyWord } = indexAndWord
+        setPostInfoPackge(
+            coalitionPosts.filter(post => post[selectedIndex] === keyWord)
+        )
+    }
+
     return (
-        <Table bordered hover variant="dark">
-            <thead>
-                <tr>
-                    {head}
-                </tr>
-            </thead>
-            <tbody>
-                {tableBody}
-            </tbody>
-        </Table>
+        <div>
+            {SearchBar(indexs, searchEngine)}
+            <Table bordered hover variant="dark">
+                <thead>
+                    <tr>
+                        {head}
+                    </tr>
+                </thead>
+                <tbody>
+                    {tableBody}
+                </tbody>
+            </Table>
+        </div>
     );
 }
 

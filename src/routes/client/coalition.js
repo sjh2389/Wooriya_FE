@@ -11,7 +11,7 @@ import './css/coalition.css'
 import BoardPostForm from "../../component/boardPostForm"
 import { Link } from "react-router-dom";
 
-// import DummyCoalition from '../../dummy/dummyCoalition'
+import DummyCoalition from '../../dummy/dummyCoalition'
 
 function Coalition() {
 
@@ -25,6 +25,7 @@ function Coalition() {
     // 더미데이터 입력
     useEffect(() => {
         setIndexs(["글번호", "title", "companyName", "coType", "coSize" ])
+        setCoalitionPosts( DummyCoalition )
 
         // axios({
         //     url: 'http://localhost:8080/companypost',
