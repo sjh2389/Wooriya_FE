@@ -66,8 +66,38 @@ function Board (indexs, coalitionPosts) {
     // post 검색, 필터링 함수
     function searchEngine(indexAndWord) {
         const { selectedIndex, keyWord } = indexAndWord
+        
+        // 검색어 글자로, 모두 소문자로
+        const lowerKeyWord = String(keyWord.toLowerCase())
+
+        
         setPostInfoPackge(
-            coalitionPosts.filter(post => post[selectedIndex] === keyWord)
+            coalitionPosts.filter(post => {
+
+                let postValueString = ""
+                
+                if (selectedIndex === "전체") {
+                    // 카테고리가 선택이 안된 경우
+                    // obj형태를 value값만 취해 string으로 바꾼다.
+                    postValueString = Object.values(post).toString()
+
+                } else if (selectedIndex !== "전체") {
+                    // 선택된 경우 해당 key값 가진 value만 추출
+                    postValueString = post[selectedIndex]
+
+                } else {
+                    return console.log("검색 카테고리 선택 오류: " + selectedIndex)
+                }
+
+
+                // 글의 띄어쓰기 제거
+                const noSpace = postValueString
+                // 글자 모두 소문자로
+                const noSpaceNoUpper = noSpace.toLowerCase()
+
+                // 검색어와 글 곂치는 부분 있는지 확인
+                return (noSpaceNoUpper.indexOf(lowerKeyWord) !== -1)
+            })
         )
     }
 

@@ -78,9 +78,25 @@ function BoardForm(writing_elements, inputBuffer, setInputBuffer) {
         // 이미지 formData에 실어보내 url로 변환하기
         input.addEventListener('change', async () => {
             const formData = new FormData()
+            const reader = new FileReader()
+
+            reader.readAsDataURL(input.files[0])
+
+            reader.onload = () => {
+                console.log(reader.result)
+            }
+
+
             formData.append('img', input.files[0])
 
             try {
+                // axios({
+                //     method: "post",
+                //     url: "http://localhost:8080/uploadimage",
+                //     data: formData,
+                //     headers: {"Contnet-Type": "multipart/form-data"}
+                // })
+
                 const res = await axios.post('http://localhost:8080/uploadimage', formData)
                 const imgUrls = res.data
 
@@ -90,7 +106,6 @@ function BoardForm(writing_elements, inputBuffer, setInputBuffer) {
 
                 // 에디터에 이미지 삽입
                 editor.insertEmbed(range, 'image', imgUrls)
-
             }
             catch (error) {
                 console.log("이미지 업로드 에러발생: " + error)

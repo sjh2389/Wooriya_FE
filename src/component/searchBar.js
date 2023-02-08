@@ -54,6 +54,7 @@ function SearchBar( indexs, searchEngine ) {
             </DropdownButton>
             <Form.Control
                 onChange={onKeyWord}
+                onKeyUp = {() => {searchEngine(indexAndWord)}}
                 value={indexAndWord["keyWord"]}
             />
             <Button 
