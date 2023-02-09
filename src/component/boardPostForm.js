@@ -80,36 +80,32 @@ function BoardForm(writing_elements, inputBuffer, setInputBuffer) {
             const formData = new FormData()
             const reader = new FileReader()
 
-            reader.readAsDataURL(input.files[0])
-
-            reader.onload = () => {
-                console.log(reader.result)
-            }
-
-
-            formData.append('img', input.files[0])
-
             try {
-                // axios({
-                //     method: "post",
-                //     url: "http://localhost:8080/uploadimage",
-                //     data: formData,
-                //     headers: {"Contnet-Type": "multipart/form-data"}
-                // })
+                // 받은 파일 base64로 인코딩
+                reader.readAsDataURL(input.files[0])
 
-                const res = await axios.post('http://localhost:8080/uploadimage', formData)
-                const imgUrls = res.data
+                // 인코딩 성공 시 폼데이터에 실어보내기
+                reader.onload = async () => {
+                    formData.append('img', reader.result)
+                    
 
-                // 현제 커서 위치 반환
-                const editor = quillRef.current.getEditor()
-                const range = editor.getSelection().index
-
-                // 에디터에 이미지 삽입
-                editor.insertEmbed(range, 'image', imgUrls)
+                    const res = await axios.post('http://localhost:8080/imageupload', formData)
+                    const imgUrls = res.data
+        
+                    // 현제 커서 위치 반환
+                    const editor = quillRef.current.getEditor()
+                    const range = editor.getSelection().index
+        
+                    // 에디터에 이미지 삽입
+                    editor.insertEmbed(range, 'image', imgUrls)
+                }
             }
             catch (error) {
                 console.log("이미지 업로드 에러발생: " + error)
             }
+
+
+
 
         })
     }
