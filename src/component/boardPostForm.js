@@ -31,7 +31,9 @@ function BoardForm(writing_elements, inputBuffer, setInputBuffer) {
     // 사용자의 input입력값 핸들링
     function inPutChange(e) {
         const id = e.target.id
-        const value = e.target.value
+        // 숫자는 int로 보내야함으로 조건문 걸기
+        const value = (id === "coSize") ? parseInt(e.target.value) : e.target.value
+
         setInputBuffer(prev => ({...prev, [id] : value}))
     }
 
@@ -90,7 +92,7 @@ function BoardForm(writing_elements, inputBuffer, setInputBuffer) {
                     
 
                     const res = await axios.post('http://localhost:8080/imageupload', formData)
-                    const imgUrls = res.data
+                    const imgUrls = `${res.data}`
         
                     // 현제 커서 위치 반환
                     const editor = quillRef.current.getEditor()

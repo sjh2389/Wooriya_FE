@@ -13,10 +13,11 @@ import './css/coalitionPost.css'
 function CoalitionPost() {
 
     // prop에서 postId 추출
-    const { postId } = useLocation()
+    const { state } = useLocation()
+    const postId = state
 
     // 
-    const [ coalitionPost, setCoalitionPost ] = useState()
+    const [ coalitionPost, setCoalitionPost ] = useState({})
 
     // 더미데이터 입력
     useEffect(() => {
@@ -36,7 +37,7 @@ function CoalitionPost() {
     return (
         <div className="coalitionPost_outterBox">
             <h1 className="coalitionPost_headline">제휴 제공글 상세페이지</h1>
-            <div dangerouslySetInnerHTML={{__html: sanitizer(coalitionPost)}} />
+            <div dangerouslySetInnerHTML={{__html: sanitizer(coalitionPost.body)}} />
         </div>
     )
 }
