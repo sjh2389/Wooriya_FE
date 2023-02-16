@@ -66,6 +66,7 @@ function BoardForm(writing_elements, inputBuffer, setInputBuffer) {
         }
     }, [])
 
+
     // image 업로드 시 서버로 전송 후 url 받아오는 함수
     function imageHandler() {
 
@@ -92,12 +93,6 @@ function BoardForm(writing_elements, inputBuffer, setInputBuffer) {
                     
                     const res = await axios.post('http://localhost:8080/imageupload', formData)
                     const imgUrls = `http://localhost:8080/image/${res.data}`
-                    const res2 = await axios.get(`http://localhost:8080/image/${res.data}`)
-                    console.log(res2)
-
-                    const res3 = await axios.get(`https://ichef.bbci.co.uk/news/800/cpsprodpb/E172/production/_126241775_getty_cats.png`)
-                    console.log(res3)
-
 
                     // 현제 커서 위치 반환
                     const editor = quillRef.current.getEditor()
@@ -129,7 +124,6 @@ function BoardForm(writing_elements, inputBuffer, setInputBuffer) {
             
         })
     }
-    
     return(
         <div>
             <div className='boardPostForm_tagBox'>{inputs}</div>
