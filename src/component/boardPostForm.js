@@ -90,10 +90,15 @@ function BoardForm(writing_elements, inputBuffer, setInputBuffer) {
                 reader.onload = async () => {
                     formData.append('img', reader.result)
                     
-
                     const res = await axios.post('http://localhost:8080/imageupload', formData)
-                    const imgUrls = `${res.data}`
-        
+                    const imgUrls = `http://localhost:8080/image/${res.data}`
+                    const res2 = await axios.get(`http://localhost:8080/image/${res.data}`)
+                    console.log(res2)
+
+                    const res3 = await axios.get(`https://ichef.bbci.co.uk/news/800/cpsprodpb/E172/production/_126241775_getty_cats.png`)
+                    console.log(res3)
+
+
                     // 현제 커서 위치 반환
                     const editor = quillRef.current.getEditor()
                     const range = editor.getSelection().index
@@ -101,17 +106,30 @@ function BoardForm(writing_elements, inputBuffer, setInputBuffer) {
                     // 에디터에 이미지 삽입
                     editor.insertEmbed(range, 'image', imgUrls)
                 }
+
+                // // blob으로 제공
+                // formData.append('img', input.files[0])
+                    
+                // const res = await axios.post('http://localhost:8080/imageupload', formData)
+                // const imgUrls = `http://localhost:8080/image/${res.data}`
+
+                // // 현제 커서 위치 반환
+                // const editor = quillRef.current.getEditor()
+                // const range = editor.getSelection().index
+        
+                // // 에디터에 이미지 삽입
+                // editor.insertEmbed(range, 'image', imgUrls)
+
             }
             catch (error) {
                 console.log("이미지 업로드 에러발생: " + error)
             }
 
 
-
-
+            
         })
     }
-
+    
     return(
         <div>
             <div className='boardPostForm_tagBox'>{inputs}</div>
