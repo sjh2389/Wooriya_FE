@@ -10,7 +10,7 @@ function SignOut() {
     return{type: signOut}
 }
 
-const reducer = (state = {}, action) => {
+function reducer(state = {}, action) {
     switch(action.type){
         case signIn:
             return action.userObj
