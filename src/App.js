@@ -1,6 +1,6 @@
 /*
 작성자 서종현
-작성일 23.02.01.
+작성일 23.02.20.
 웹주소 경로 관리 코드단
 */
 
@@ -14,6 +14,9 @@ import Request from "./routes/provider/request.js"
 
 import Coalition from "./routes/client/coalition.js"
 import CoalitionPost from "./routes/client/coalitionPost.js"
+import NavBar from "./component/navBar.js"
+import LogIn from "./routes/main/logIn.js"
+import SignUp from "./routes/main/signUp.js"
 
 
 function App() {
@@ -23,6 +26,8 @@ function App() {
       <div>
         <Routes>
           <Route index element={<Home />}></Route>
+          <Route path="login" element={<LogIn />}></Route>
+          <Route path="signup" element={<SignUp />}></Route>
         </Routes>
       </div>
     )
@@ -52,6 +57,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
+        <NavBar/>
         <Routes>
           <Route path="/*" element={<Main />}/>
           <Route path="/provider/*" element={<Provider />}/>
