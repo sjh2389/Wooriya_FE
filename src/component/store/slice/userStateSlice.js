@@ -8,14 +8,15 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const userStateSlice = createSlice({
 
-    name: "userState",                 // store 이름 지정
-    initialState: "GUEST",             // 초깃값 지정
-    reducers: {                        // store 수정에 사용될 action 정보기입
-        SignInToStore(state, action){  // 로그인
-            state = action.userObj
+    name: "userState",                       // store 이름 지정
+    initialState: "GUEST",                   // 초깃값 지정
+    reducers: {                              // store 수정에 사용될 action 정보기입
+        SignInToStore(state, action) {       // 로그인
+            console.log(action)
+            return action.payload.memberRole
         },
-        SignOutToStore(state) {        // 로그아웃 후 사용자 권한 GUEST로 초기화
-            state = "GUEST"
+        SignOutToStore() {                   // 로그아웃 후 값 초기화
+            return "GUEST"
         }
     }
 

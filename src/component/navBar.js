@@ -8,10 +8,13 @@ import { NavLink } from "react-router-dom"
 import { connect } from "react-redux"
 import { SignOutToStore } from "./store/slice/userStateSlice"
 import './css/navBar.css'
+import { useEffect } from "react"
 
 function NavBar({userObjInStore, SignOutToStore}) {
 
-    const { memberRole } = userObjInStore
+    useEffect(() => {
+        console.log(userObjInStore.userState)
+    },[userObjInStore.userState])
 
     return (
         <nav className="navBar_background">
@@ -25,7 +28,7 @@ function NavBar({userObjInStore, SignOutToStore}) {
                 <NavLink to={'/login'} className="navBar_inherit">Login</NavLink>
             </div>
             <div className="navBar_status">
-                <NavLink className="navBar_inherit">Signed in as: {(!memberRole)? "GUEST": memberRole}</NavLink>
+                <NavLink className="navBar_inherit">Signed in as: {userObjInStore.userState}</NavLink>
             </div>
         </nav>
     )
