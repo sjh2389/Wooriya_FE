@@ -6,7 +6,7 @@
 
 import { useState } from "react";
 import { connect } from "react-redux";
-import { actionCreators } from "../../component/store/store";
+import { SignInToStore } from "../../component/store/slice/userStateSlice";
 import axios from "axios";
 import { useCookies } from 'react-cookie'
 import { useNavigate } from "react-router-dom";
@@ -108,7 +108,7 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch) {
     return {
-        SignInToStore: (userObj) => dispatch(actionCreators.SignIn(userObj))
+        SignInToStore: (userObj) => dispatch(SignInToStore(userObj))
     }
 }
 

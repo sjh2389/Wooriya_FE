@@ -6,7 +6,7 @@
 
 import { NavLink } from "react-router-dom"
 import { connect } from "react-redux"
-import { actionCreators } from "./store/store"
+import { SignOutToStore } from "./store/slice/userStateSlice"
 import './css/navBar.css'
 
 function NavBar({userObjInStore, SignOutToStore}) {
@@ -36,7 +36,7 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch) {
     return {
-        SignOutToStore: (userObj) => dispatch(actionCreators.SignOut(userObj))
+        SignOutToStore: (userObj) => dispatch(SignOutToStore(userObj))
     }
 }
 
