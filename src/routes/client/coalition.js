@@ -1,6 +1,6 @@
 /*
 작성자 서종현
-작성일 23.01.26.
+작성일 23.02.28.
 제휴제공 게시판
 */
 
@@ -28,7 +28,7 @@ function Coalition() {
         // setCoalitionPosts( DummyCoalition )
 
         axios({
-            url: 'http://localhost:8080/companypost',
+            url: 'http://concent-nudge.kro.kr/companypost',
             method: "GET"
         })
             .then(res => setCoalitionPosts(res.data))
@@ -40,13 +40,13 @@ function Coalition() {
     function onSubmit() {
 
         axios({
-            url: 'http://localhost:8080/companypost/post',
+            url: 'http://concent-nudge.kro.kr/companypost/post',
             method: "POST",
             data: inputBuffer,
         })
         .then(res => {
             console.log(res.data)
-            setCoalitionPosts(prev => [...prev, inputBuffer])
+            window.location.reload()
         })
         .catch(err => console.log(err))
     }

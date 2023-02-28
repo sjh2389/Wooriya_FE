@@ -1,6 +1,6 @@
 /*
 작성자 서종현
-작성일 23.01.31.
+최종수정일 23.02.28.
 제휴 서비스 요청페이지
 */
 
@@ -27,7 +27,7 @@ function Request() {
         setIndexs(["글번호", "coSize", "coType", "title", "groupName"])
 
         axios({
-            url: 'http://localhost:8080/grouppost',
+            url: 'http://concent-nudge.kro.kr/grouppost',
             method: "GET"
         })
             .then(res => setCoalitionPosts(res.data))
@@ -42,7 +42,7 @@ function Request() {
         setCoalitionPosts(prev => [...prev, inputBuffer])
 
         // axios({
-        //     url: 'http://localhost:8080/grouppost/post',
+        //     url: 'http://concent-nudge.kro.kr/grouppost/post',
         //     method: "POST",
         //     data: inputBuffer,
         //     headers: {

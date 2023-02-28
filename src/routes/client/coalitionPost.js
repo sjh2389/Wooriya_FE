@@ -1,6 +1,6 @@
 /*
 작성자 서종현
-작성일 23.02.06.
+작성일 23.02.28.
 제휴제공 글 상세페이지
 */
 
@@ -22,7 +22,7 @@ function CoalitionPost() {
     // 더미데이터 입력
     useEffect(() => {
         axios({
-            url: `http://localhost:8080/companypost/${postId}`,
+            url: `http://concent-nudge.kro.kr/companypost/${postId}`,
             method: "GET"
         })
             .then(res => setCoalitionPost(res.data))

@@ -1,6 +1,6 @@
 /*
 작성자 서종현
-작성일 23.02.06.
+작성일 23.02.28.
 게시글 작성 컴포넌트
 writing_elements는 제목, 제공제휴유형과 같은 기입요소 Array
 setInputBuffer는 작성된 페이지를 부모요소로 올려주기위한 함수
@@ -86,8 +86,8 @@ function BoardForm(writing_elements, inputBuffer, setInputBuffer) {
                 // 이미지 blob으로 제공    
                 formData.append('img', input.files[0], input.files[0].name)
                     
-                const res = await axios.post('http://localhost:8080/imgupload', formData)
-                const imgUrls = `http://localhost:8080/image/${res.data}`
+                const res = await axios.post('http://concent-nudge.kro.kr/imgupload', formData)
+                const imgUrls = `http://concent-nudge.kro.kr/image/${res.data}`
 
                 // 현제 커서 위치 반환
                 const editor = quillRef.current.getEditor()

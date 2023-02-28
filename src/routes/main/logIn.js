@@ -1,6 +1,6 @@
 /*
 작성자 서종현
-최종수정일 23.02.27.
+최종수정일 23.02.28.
 로그인 페이지
 */
 
@@ -40,7 +40,7 @@ function SignIn ({userObjInStore, SignInToStore}) {
           console.log("비밀번호를 입력해주세요.");
         } else {
             axios({
-                url: `http://localhost:8080/user/login`,
+                url: `http://concent-nudge.kro.kr/user/login`,
                 method: "POST",
                 data: {
                     memberId: signinObj.email,
@@ -52,7 +52,7 @@ function SignIn ({userObjInStore, SignInToStore}) {
                 const cookieValue =`${data.data.accessToken}`
                 setCookie("Authorization", cookieValue, [])
                 axios({
-                    url: `http://localhost:8080/user/info`,
+                    url: `http://concent-nudge.kro.kr/user/info`,
                     method: "GET",
                     withCredentials: true,
                     headers: {authorization: `Bearer ${cookieValue}`},

@@ -1,6 +1,6 @@
 /*
 작성자 서종현
-최종수정일 23.02.20.
+최종수정일 23.02.28.
 사용자 회원가입 페이지
 */
 
@@ -48,7 +48,7 @@ function SignUp() {
         //   messageError("사업자 등록번호를 입력해주세요.");
         } else {
         let res = await axios({
-            url: `http://localhost:8080/user/join`,
+            url: `http://concent-nudge.kro.kr/user/join`,
             method: "POST",
             data: {
             memberId: userInfo.email,
