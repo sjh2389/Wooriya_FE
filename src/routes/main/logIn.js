@@ -1,6 +1,6 @@
 /*
 작성자 서종현
-작성일 23.02.20.
+최종수정일 23.02.27.
 로그인 페이지
 */
 
@@ -96,6 +96,12 @@ function SignIn ({userObjInStore, SignInToStore}) {
                 </dl>
                 <button onClick={signin}>
                     로그인
+                </button>
+                <button onClick={() => {navigate('/signup')}}>
+                    회원가입
+                </button>
+                <button onClick={() => {navigate('/findid')}}>
+                    아이디/비밀번호 찾기
                 </button>
             </div>
         </div>

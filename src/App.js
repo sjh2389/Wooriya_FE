@@ -8,16 +8,20 @@
 import { HashRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+// main 라우터
 import Home from "./routes/main/home.js"
+import SignUp from "./routes/main/signUp.js"
+import LogIn from "./routes/main/logIn.js"
 
-import Request from "./routes/provider/request.js"
-
+// client 라우터
 import Coalition from "./routes/client/coalition.js"
 import CoalitionPost from "./routes/client/coalitionPost.js"
-import NavBar from "./component/navBar.js"
-import LogIn from "./routes/main/logIn.js"
-import SignUp from "./routes/main/signUp.js"
 
+// provider 라우터
+import Request from "./routes/provider/request.js"
+
+import NavBar from "./component/navBar.js"
+import FindId from "./routes/main/findId.js"
 
 function App() {
 
@@ -28,6 +32,7 @@ function App() {
           <Route index element={<Home />}></Route>
           <Route path="login" element={<LogIn />}></Route>
           <Route path="signup" element={<SignUp />}></Route>
+          <Route path="findid" element={<FindId />}></Route>
         </Routes>
       </div>
     )

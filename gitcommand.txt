@@ -7,7 +7,7 @@ git remote add origin https://github.com/sjh2389/CONCENT_FE.git
 git push -u origin main
 
 git add .
-git commit -m "FE 02/21 redux_bugfix commit"
+git commit -m "FE 02/28 font-fammily commit"
 git branch -M main
 git remote add origin https://github.com/sjh2389/CONCENT_FE.git
 git push -u origin main

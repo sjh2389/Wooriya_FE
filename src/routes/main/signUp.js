@@ -126,11 +126,14 @@ function SignUp() {
                 <div>
                     기관명
                 </div>
-                <input
-                    type="text"
-                    onChange={onchange}
-                    id="title"
-                />
+                <span>
+                    <input
+                        type="text"
+                        onChange={onchange}
+                        id="title"
+                    />
+                    <button>기관 인증</button>
+                </span>
             </div>
             <div>
                 <div>
@@ -142,6 +145,7 @@ function SignUp() {
                     id="registNumber"
                 />
             </div>
+            <br />
             <div>
                 <button 
                     onClick={validate}
