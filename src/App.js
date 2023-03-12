@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Home from "./routes/main/home.js"
 import SignUp from "./routes/main/signUp.js"
 import LogIn from "./routes/main/logIn.js"
+import AboutUs from "./routes/main/aboutUs.js"
 
 // client 라우터
 import Coalition from "./routes/client/coalition.js"
@@ -33,6 +34,7 @@ function App() {
           <Route path="login" element={<LogIn />}></Route>
           <Route path="signup" element={<SignUp />}></Route>
           <Route path="findid" element={<FindId />}></Route>
+          <Route path="aboutus" element={<AboutUs />}></Route>
         </Routes>
       </div>
     )

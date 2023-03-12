@@ -22,7 +22,7 @@ function NavBar({userObjInStore, SignOutToStore}) {
                 <NavLink to={'/'} className="navBar_inherit">CONCENT</NavLink>
             </div>
             <div className="navBar_menu">
-                <NavLink className="navBar_inherit">About Us</NavLink>
+                <NavLink to={'/aboutus'} className="navBar_inherit">About Us</NavLink>
                 <NavLink className="navBar_inherit">Contact</NavLink>
                 <NavLink to={'/signup'} className="navBar_inherit">SignUp</NavLink>
                 <NavLink to={'/login'} className="navBar_inherit">Login</NavLink>

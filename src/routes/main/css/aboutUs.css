@@ -1,0 +1,212 @@
+.aboutUs_backmargin {
+   max-width: 1248px;
+   margin: 0 auto
+}
+
+.aboutUs_firstframe {
+    min-height: 1080px;
+}
+.aboutUs_frame66 {
+    min-height: 810px;
+}
+.aboutUs_frame67 {
+    min-height: 526px;
+}
+.aboutUs_frame68 {
+    min-height: 808px;
+}
+
+.aboutUs_margin_auto {
+    width: 100%;
+    max-width: 1016px;
+    margin: 64px auto 0;
+    display: flex;
+}
+
+.aboutUs_headLine_1 {
+    margin-top: 16px;
+    
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 64px;
+    text-align: center;
+
+    /* Coolgray/CG800 */
+    color: #292E33;
+}
+.aboutUs_headLine_2 {
+    max-width: 1248px;
+    margin-top: 16px;
+    
+    font-family: 'Spoqa Han Sans Neo';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+
+    /* Coolgray/CG800 */
+
+    color: #292E33;
+}
+.aboutUs_headLine_3 {
+    max-width: 1248px;
+    
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    
+    /* Primary */
+    color: #267DFF;
+}
+
+.aboutUs_subTitle_1 {
+    max-width: 1248px;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    
+    color: #292E33;
+}
+.aboutUs_subTitle_2 {
+    max-width: 1248px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    
+    color: #6C7680;
+}
+.aboutUs_underArrow {
+    margin-top: 100px;
+    max-width: 1248px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    
+    /* Coolgray/CG500 */
+    color: #6C7680;
+}
+
+.aboutUs_cardBox {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 200px;
+}
+.aboutUs_card_1 {
+    width: 392px;
+    height: 392px;
+    background: #F7F9FA;
+    border-radius: 16px;
+
+    padding: 40px 30px;
+    margin: 16px 8px;
+    overflow: hidden;
+}
+.aboutUs_card_2 {
+    width: 288px;
+    height: 154px; 
+    margin: 16px 8px;
+    background: #FFFFFF;
+    overflow: hidden;
+}
+.aboutUs_card_3 {
+    width: 600px;
+    height: 390px;
+    background: #D2E8D2;
+    border-radius: 16px;
+
+    padding: 40px 30px;
+    margin: 16px 8px;
+    overflow: hidden;
+}
+.aboutUs_card_4 {
+    width: 600px;
+    height: 390px;
+    background: #C9DFF3;
+    border-radius: 16px;
+
+    padding: 40px 30px;
+    margin: 16px 8px;
+    overflow: hidden;
+}
+@media screen and (max-width: 1248px) {
+    .aboutUs_headLine_1 {
+        font-size: 32px;
+        line-height: 32px;
+    }
+    .aboutUs_cardBox{
+        display: block;
+    }
+    .aboutUs_card_1{
+        margin: 8px auto;
+        max-width: 100vw;
+    }
+    .aboutUs_card_2{
+        margin: 16px auto;
+    }
+    .aboutUs_card_3{
+        margin: 8px auto;
+        max-width: 100vw;
+    }
+    .aboutUs_card_4{
+        margin: 8px auto;
+        max-width: 100vw;
+    }
+}
+
+.aboutUs_cardImg_1 {
+    width: 240px;
+    margin: 0 auto;
+    display: flex;
+}
+.aboutUs_cardImg_2 {
+    width: 80px;
+    margin: 0 auto;
+    display: flex;
+}
+.aboutUs_cardImg_3 {
+    width: 320px;
+    height: 248px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.aboutUs_frame75 {
+    height: 336px;
+    background: #F7F9FA;
+    padding-top: 120px;
+}
+.aboutUs_footbarText_1 {
+    height: 20px;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+
+    color: #292E33;
+}
+.aboutUs_footbarText_2 {
+    height: 20px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    
+    color: #292E33;
+}
