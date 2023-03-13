@@ -19,7 +19,7 @@ function NavBar({userObjInStore, SignOutToStore}) {
     return (
         <nav className="navBar_background">
             <div className="navBar_logo">
-                <NavLink to={'/'} className="navBar_inherit">CONCENT</NavLink>
+                <NavLink to={'/'} className="navBar_inherit">Wooriya</NavLink>
             </div>
             <div className="navBar_menu">
                 <NavLink to={'/aboutus'} className="navBar_inherit">About Us</NavLink>

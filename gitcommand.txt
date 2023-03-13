@@ -3,11 +3,11 @@ git init
 git add README.md
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/sjh2389/CONCENT_FE.git
+git remote add origin https://github.com/sjh2389/Wooriya_FE.git
 git push -u origin main
 
 git add .
-git commit -m "FE 02/28 update_url,reroad_page commit"
+git commit -m "FE 03/13 build page commit"
 git branch -M main
-git remote add origin https://github.com/sjh2389/CONCENT_FE.git
+git remote add origin https://github.com/sjh2389/Wooriya_FE.git
 git push -u origin main

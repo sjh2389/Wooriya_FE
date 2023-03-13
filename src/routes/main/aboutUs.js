@@ -25,7 +25,7 @@ function AboutUs() {
                     <img className="aboutUs_margin_auto" src={img_handShake} alt="handShake"/>
                     <p className="aboutUs_headLine_1">
                         클릭으로 시작하는 제휴<br/>
-                        <span style={{color:"#267DFF"}}>콘센트</span>
+                        <span style={{color:"#267DFF"}}>우리야</span>
                     </p>
                     <p className="aboutUs_underArrow">
                         내려서 확인해보기 <br /><br />
@@ -34,7 +34,7 @@ function AboutUs() {
                 </div>
                 <div className="aboutUs_frame66">
                     <p className="aboutUs_headLine_3">
-                        콘센트 비즈니스 모드
+                        우리야 비즈니스 모드
                     </p>
                     <p className="aboutUs_headLine_2">
                         간편 등록부터 <br />
@@ -76,12 +76,12 @@ function AboutUs() {
                 <div className="aboutUs_frame67">
                     <p className="aboutUs_headLine_2">
                         지금 알아볼래요?<br/>
-                        콘센트 비즈니스 등록방법
+                        우리야 비즈니스 등록방법
                     </p>
                     <div className="aboutUs_cardBox">
                         <div className="aboutUs_card_2">
                             <img className="aboutUs_cardImg_2" src={img_step1} alt=""/>
-                            <p className="aboutUs_subTitle_1">콘센트 가입하기</p>
+                            <p className="aboutUs_subTitle_1">우리야 가입하기</p>
                         </div>
                         <div className="aboutUs_card_2">
                             <img className="aboutUs_cardImg_2" src={img_step2} alt=""/>
@@ -95,7 +95,7 @@ function AboutUs() {
                         </div>
                         <div className="aboutUs_card_2">
                             <img className="aboutUs_cardImg_2" src={img_step4} alt=""/>
-                            <p className="aboutUs_subTitle_1">콘센트 활동 준비 끝!</p>
+                            <p className="aboutUs_subTitle_1">우리야 활동 준비 끝!</p>
                         </div>
                     </div>
                 </div>
