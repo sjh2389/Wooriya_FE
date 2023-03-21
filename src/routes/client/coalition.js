@@ -10,7 +10,6 @@ import Board from "../../component/board"
 import './css/coalition.css'
 import BoardPostForm from "../../component/boardPostForm"
 import { Link } from "react-router-dom";
-
 // import DummyCoalition from '../../dummy/dummyCoalition'
 
 function Coalition() {
@@ -28,7 +27,7 @@ function Coalition() {
         // setCoalitionPosts( DummyCoalition )
 
         axios({
-            url: 'http://concent-nudge.kro.kr/companypost',
+            url: "https://" + process.env.REACT_APP_API_ADDRESS + '/companypost',
             method: "GET"
         })
             .then(res => setCoalitionPosts(res.data))
@@ -40,7 +39,7 @@ function Coalition() {
     function onSubmit() {
 
         axios({
-            url: 'http://concent-nudge.kro.kr/companypost/post',
+            url: "https://" + process.env.REACT_APP_API_ADDRESS + '/companypost/post',
             method: "POST",
             data: inputBuffer,
         })

@@ -22,7 +22,7 @@ function CoalitionPost() {
     // 더미데이터 입력
     useEffect(() => {
         axios({
-            url: `http://concent-nudge.kro.kr/companypost/${postId}`,
+            url: "https://" + process.env.REACT_APP_API_ADDRESS + "/companypost/" + postId,
             method: "GET"
         })
             .then(res => setCoalitionPost(res.data))

@@ -27,7 +27,7 @@ function Request() {
         setIndexs(["글번호", "coSize", "coType", "title", "groupName"])
 
         axios({
-            url: 'http://concent-nudge.kro.kr/grouppost',
+            url: 'https://' + process.env.REACT_APP_API_ADDRESS + '/grouppost',
             method: "GET"
         })
             .then(res => setCoalitionPosts(res.data))

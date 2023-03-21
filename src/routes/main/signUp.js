@@ -8,7 +8,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-
 function SignUp() {
 
     const navigate = useNavigate();
@@ -48,7 +47,7 @@ function SignUp() {
         //   messageError("사업자 등록번호를 입력해주세요.");
         } else {
         let res = await axios({
-            url: `http://concent-nudge.kro.kr/user/join`,
+            url: "https://" + process.env.REACT_APP_API_ADDRESS + "/user/join",
             method: "POST",
             data: {
             memberId: userInfo.email,
