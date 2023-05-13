@@ -14,9 +14,9 @@ function SignUp() {
     const [userInfo, setUserInfo] = useState({
         email: "",
         password: "",
-        title: "",
-        registNumber: "",
         role:"",
+        userName: "",
+        userNum: "",
     });
     const [isCorrect, setIsCorrect] = useState(false);
 
@@ -46,14 +46,11 @@ function SignUp() {
         // } else if (userInfo.registNumber === "") {
         //   messageError("사업자 등록번호를 입력해주세요.");
         } else {
+        console.log(userInfo)
         let res = await axios({
             url: "https://" + process.env.REACT_APP_API_ADDRESS + "/user/join",
             method: "POST",
-            data: {
-            memberId: userInfo.email,
-            password: userInfo.password,
-            role: userInfo.role,
-            },
+            data: userInfo,
             // withCredentials: true,
         });
 
@@ -129,7 +126,7 @@ function SignUp() {
                     <input
                         type="text"
                         onChange={onchange}
-                        id="title"
+                        id="userName"
                     />
                     <button>기관 인증</button>
                 </span>
@@ -141,7 +138,7 @@ function SignUp() {
                 <input
                     type="text"
                     onChange={onchange}
-                    id="registNumber"
+                    id="userNum"
                 />
             </div>
             <br />

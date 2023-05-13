@@ -7,7 +7,7 @@ git remote add origin https://github.com/Ajou-Nudge/Wooriya_FE.git
 git push -u origin main
 
 git add .
-git commit -m "FE 03/21 build page commit"
+git commit -m "FE 05/13 게시판 글 삭제 기능 외 5개 api 추가 commit"
 git branch -M main
 git remote add origin https://github.com/Ajou-Nudge/Wooriya_FE.git
 git push -u origin main
