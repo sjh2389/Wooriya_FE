@@ -43,7 +43,7 @@ function SignIn ({userObjInStore, SignInToStore}) {
                 url: "https://" + process.env.REACT_APP_API_ADDRESS + '/user/login',
                 method: "POST",
                 data: {
-                    memberId: signinObj.email,
+                    email: signinObj.email,
                     password: signinObj.password,
                 },
                 withCredentials: true,
