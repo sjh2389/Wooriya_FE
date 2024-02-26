@@ -40,10 +40,10 @@ function SignIn ({userObjInStore, SignInToStore}) {
           console.log("비밀번호를 입력해주세요.");
         } else {
             axios({
-                url: `http://concent-nudge.kro.kr/user/login`,
+                url: "https://" + process.env.REACT_APP_API_ADDRESS + '/user/login',
                 method: "POST",
                 data: {
-                    memberId: signinObj.email,
+                    email: signinObj.email,
                     password: signinObj.password,
                 },
                 withCredentials: true,
@@ -52,7 +52,7 @@ function SignIn ({userObjInStore, SignInToStore}) {
                 const cookieValue =`${data.data.accessToken}`
                 setCookie("Authorization", cookieValue, [])
                 axios({
-                    url: `http://concent-nudge.kro.kr/user/info`,
+                    url: process.env.REACT_APP_API_ADDRESS + "/user/info",
                     method: "GET",
                     withCredentials: true,
                     headers: {authorization: `Bearer ${cookieValue}`},

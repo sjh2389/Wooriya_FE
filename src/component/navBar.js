@@ -22,10 +22,12 @@ function NavBar({userObjInStore, SignOutToStore}) {
                 <NavLink to={'/'} className="navBar_inherit">Wooriya</NavLink>
             </div>
             <div className="navBar_menu">
-                <NavLink to={'/aboutus'} className="navBar_inherit">About Us</NavLink>
+                <NavLink to={'/'} className="navBar_inherit">About Us</NavLink>
                 <NavLink className="navBar_inherit">Contact</NavLink>
                 <NavLink to={'/signup'} className="navBar_inherit">SignUp</NavLink>
                 <NavLink to={'/login'} className="navBar_inherit">Login</NavLink>
+                <NavLink to={'/client/coalition'} className="navBar_inherit">Consume</NavLink>
+                <NavLink to={'/provider/request'} className="navBar_inherit">Provide</NavLink>
             </div>
             <div className="navBar_status">
                 <NavLink className="navBar_inherit">Signed in as: {userObjInStore.userState}</NavLink>

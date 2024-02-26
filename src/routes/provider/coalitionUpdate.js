@@ -1,25 +1,25 @@
 /*
 작성자 서종현
-작성일 23.02.28.
-제휴제공 게시판
+작성일 23.05.13.
+제휴제공 글 수정 페이지
 */
 
 import { useEffect, useState } from "react"
 import axios from "axios"
-import Board from "../../component/board"
+import { useLocation } from "react-router-dom"
 import './css/coalition.css'
 import BoardPostForm from "../../component/boardPostForm"
 import { Link } from "react-router-dom";
 // import DummyCoalition from '../../dummy/dummyCoalition'
 
-function Coalition() {
+function CoalitionUpdate() {
 
-    // 게시판 게시글 상단 머리글
-    const [ indexs, setIndexs ] = useState([])
-    // 서버에서 받아온 게시판 글
-    const [ coalitionPosts, setCoalitionPosts ] = useState([])
+    const { state, coalitionPost } = useLocation()
+    const postId = state
+
+
     // 사용자가 작성한 게시글
-    const [ inputBuffer, setInputBuffer ] = useState({})
+    const [ inputBuffer, setInputBuffer ] = useState(coalitionPost)
 
     // 더미데이터 입력
     useEffect(() => {
@@ -40,7 +40,7 @@ function Coalition() {
         console.log(inputBuffer)
 
         axios({
-            url: "https://" + process.env.REACT_APP_API_ADDRESS + '/companypost/post',
+            url: "https://" + process.env.REACT_APP_API_ADDRESS + '/companypost/update',
             method: "POST",
             data: inputBuffer,
         })
@@ -54,11 +54,7 @@ function Coalition() {
     return (
         <div className="coalition_outterBox">
             <h1 className="coalition_headline">
-                제휴제공 게시판
-            </h1>
-            {Board(indexs, coalitionPosts)}
-            <h1 className="coalition_headline">
-                제휴제공 포스트 작성
+                제휴제공 포스트 수정 페이지
             </h1>
             {BoardPostForm([ "title", "coType", "coSize" ], inputBuffer, setInputBuffer)}
             <div className="coalition_btnBox">
@@ -71,4 +67,4 @@ function Coalition() {
     )
 }
 
-export default Coalition
+export default CoalitionUpdate

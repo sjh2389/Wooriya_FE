@@ -27,7 +27,7 @@ function Request() {
         setIndexs(["글번호", "coSize", "coType", "title", "groupName"])
 
         axios({
-            url: 'http://concent-nudge.kro.kr/grouppost',
+            url: 'https://' + process.env.REACT_APP_API_ADDRESS + '/grouppost',
             method: "GET"
         })
             .then(res => setCoalitionPosts(res.data))
@@ -65,7 +65,7 @@ function Request() {
             <h1 className="coalition_headline">
                 제휴요청 글 작성
             </h1>
-            {BoardPostForm([ "coSize", "coType", "title", "groupName" ], inputBuffer, setInputBuffer)}
+            {BoardPostForm([ "coSize", "coType", "title" ], inputBuffer, setInputBuffer)}
             <div className="coalition_btnBox">
                 <Link to={"/"}>
                     <button className="coalition_btn">뒤로가기</button>

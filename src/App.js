@@ -30,11 +30,11 @@ function App() {
     return(
       <div>
         <Routes>
-          <Route index element={<Home />}></Route>
+          <Route index element={<AboutUs />}></Route>
           <Route path="login" element={<LogIn />}></Route>
           <Route path="signup" element={<SignUp />}></Route>
           <Route path="findid" element={<FindId />}></Route>
-          <Route path="aboutus" element={<AboutUs />}></Route>
+          <Route path="home" element={<Home />}></Route>
         </Routes>
       </div>
     )

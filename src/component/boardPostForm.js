@@ -86,8 +86,8 @@ function BoardForm(writing_elements, inputBuffer, setInputBuffer) {
                 // 이미지 blob으로 제공    
                 formData.append('img', input.files[0], input.files[0].name)
                     
-                const res = await axios.post('http://concent-nudge.kro.kr/imgupload', formData)
-                const imgUrls = `http://concent-nudge.kro.kr/image/${res.data}`
+                const res = await axios.post("https://" + process.env.REACT_APP_API_ADDRESS + '/imgupload', formData)
+                const imgUrls = "https://" + process.env.REACT_APP_API_ADDRESS + "/image/" + res.data
 
                 // 현제 커서 위치 반환
                 const editor = quillRef.current.getEditor()
